@@ -10,3 +10,7 @@ h1, nav {
 .header {
     font-weight: bold; 
 }
+
+body {
+    word-wrap: break-word;
+}
