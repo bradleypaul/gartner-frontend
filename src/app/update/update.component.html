@@ -1,0 +1,43 @@
+<div class="container">
+  <h2>
+    Edit Product # {{id}}
+  </h2>
+
+  <form #updateForm="ngForm" (ngSubmit)="submit()">
+    <div class="form-group">
+      <label for="name">Product Name</label>
+      <input type="text" class="form-control" id="name" required [(ngModel)]="model.Name" name="name" #name="ngModel" />
+    </div>
+
+    <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+      <div *ngIf="name.errors.required">
+        Name is required.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="description">Product Description</label>
+      <input type="text" class="form-control" id="description" [(ngModel)]="model.Description" name="description">
+    </div>
+
+    <div class="form-group">
+      <label for="url">Product URL</label>
+      <input type="text" class="form-control" id="url" [(ngModel)]="model.Url" name="url">
+    </div>
+
+    <div class="form-group">
+      <label for="categories">Product Categories</label>
+      <input type="text" class="form-control" id="categoriess" [(ngModel)]="categoryIds" name="categoryIds">
+      <label for="categories">
+        Please list category numbers in input separated by commas
+      </label>
+    </div>
+
+    <h3>
+      Available categories
+    </h3>
+    <app-categories></app-categories>
+    <button type="submit">Submit</button>
+    <br />
+  </form>
+</div>

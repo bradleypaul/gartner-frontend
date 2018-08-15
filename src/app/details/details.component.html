@@ -1,0 +1,42 @@
+<div *ngIf="(details$ | async) as details">
+  <h2>
+    Product #{{details.ProductId}} | {{details.Name}}
+  </h2>
+
+  <ul>
+    <li>
+      <span class="header">
+        URL:
+      </span>
+      <br /> {{details.Url || 'No URL Set'}}
+    </li>
+    <br/>
+    <li>
+      <span class="header">
+        Product Description:
+      </span>
+      <br /> {{details.Description || 'No description provided'}}
+    </li>
+  </ul>
+
+  <span *ngIf="details.Categories; else noCategories">
+    <ul>
+      <li class="header">Product Categories:</li>
+      <li *ngFor="let category of details.Categories;">
+        {{category.Name}}
+      </li>
+    </ul>
+  </span>
+  <ng-template #noCategories>
+    No categories set on current product.
+  </ng-template>
+
+  <br />
+  <br />
+
+  <a [routerLink]="['/update/' + details.ProductId]">
+    <button>
+      Edit product
+    </button>
+  </a>
+</div>

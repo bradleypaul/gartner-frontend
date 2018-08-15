@@ -1,0 +1,12 @@
+<div>
+  <h2>All Current Products</h2>
+  <ul>
+    <li *ngFor="let product of products;">
+      <a [routerLink]="['/details/' + product.ProductId]">
+        Name: {{product.Name}}
+        <br/>
+        Description: {{product.Description || 'None'}}
+      </a>
+    </li>
+  </ul>
+</div>

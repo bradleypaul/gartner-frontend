@@ -1,0 +1,12 @@
+@import "~bootstrap/dist/css/bootstrap.min.css";
+li {
+    list-style-type: none;
+}
+
+h1, nav {
+    text-align: center;
+}
+
+.header {
+    font-weight: bold; 
+}
