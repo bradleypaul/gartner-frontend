@@ -9,7 +9,7 @@ import { formatCSV } from '../formatCSV';
 })
 
 export class CreateComponent {
-  model = new Product(-1, '');
+  model = new Product(null, '');
   categoryIds: string;
 
   constructor(private productsService: ProductsService) {}
